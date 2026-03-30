@@ -16,10 +16,11 @@ async function runTask() {
     if (fs.existsSync(dist)) {
         rimrafSync(dist);
     }
+    
     fs.mkdirSync(dist);
 
     if (fs.existsSync('./assets')) {
-        fs.copySync('./assets', './dist/assets');
+        fs.copySync('./assets', `${dist}/assets`);
     }
 
     if (fs.existsSync('style.css')) {
@@ -41,7 +42,7 @@ async function runTask() {
         }
     });
 
-    console.log("Build fertig in /dist");
+    console.log(`Build fertig in ${dist}`);
 }
 
 runTask();
