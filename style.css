@@ -33,6 +33,11 @@ header {
     letter-spacing: -1px;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
 nav a {
     color: #ccc;
     text-decoration: none;
@@ -80,6 +85,7 @@ nav a:hover {
 .card h3 {
     margin: 0 0 10px 0;
     font-size: 1.4rem;
+    color: var(--dark);
 }
 
 .price {
@@ -93,6 +99,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     min-height: 80vh;
+    padding: 20px;
 }
 
 .login-card {
@@ -105,12 +112,12 @@ nav a:hover {
 }
 
 .login-card h2 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: 800;
     text-align: center;
 }
 
-input {
+input, textarea {
     width: 100%;
     padding: 14px;
     margin-bottom: 20px;
@@ -118,10 +125,16 @@ input {
     border-radius: 12px;
     box-sizing: border-box;
     font-size: 1rem;
+    font-family: inherit;
     transition: border-color 0.3s;
 }
 
-input:focus {
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+input:focus, textarea:focus {
     outline: none;
     border-color: var(--accent);
 }
@@ -135,18 +148,36 @@ button {
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
+    font-family: inherit;
+    transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
     background: var(--accent);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 20px;
+        padding: 20px 5%;
     }
-    nav { margin-top: 15px; }
-    nav a { margin: 0 10px; font-size: 0.9rem; }
+    nav { 
+        margin-top: 20px; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    nav a { 
+        margin: 0 5px; 
+        font-size: 0.85rem; 
+    }
+    .burger-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+    }
+    .login-card {
+        width: 100%;
+        padding: 30px 20px;
+    }
 }
