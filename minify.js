@@ -2,7 +2,7 @@ const minify = require('html-minifier').minify;
 const fs = require('fs-extra');
 const { rimrafSync } = require('rimraf');
 
-const dist = './dist';
+const dist = './docs';
 const files = [
     'index.html', 
     'about.html', 
