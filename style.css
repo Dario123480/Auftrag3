@@ -72,10 +72,12 @@ nav a:hover {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.card img {
+/* WICHTIG: Gilt jetzt für img UND video in den Cards */
+.card img, .card video {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    display: block;
 }
 
 .card-content {
@@ -157,6 +159,33 @@ button:hover {
     transform: translateY(-2px);
 }
 
+/* NEU: Video & Figure Styling */
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0; /* Verhindert ungewollte Abstände in den Cards */
+    padding: 0;
+}
+
+figcaption {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    background: #f9f9f9;
+}
+
+.video-wrapper {
+    margin-top: 30px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     header {
         flex-direction: column;

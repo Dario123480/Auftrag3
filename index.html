@@ -5,29 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger Empire | Home</title>
     <link rel="stylesheet" href="style.css?v=1.1">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            filter: brightness(50%);
+        }
+
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+            text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 28px;
+            background: #ff9f43;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 700px;
+            line-height: 1.5;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <video autoplay loop muted playsinline poster="assets/images/hero-burger.jpg" class="video-background">
+        <source src="assets/videos/video.mp4" type="video/mp4">
+        <source src="assets/videos/video.webm" type="video/webm">
+    </video>
+
     <header>
         <div class="logo">🍔 Burger Empire</div>
         <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">Über uns</a>
-    <a href="produkte.html">Menü</a>
-    <a href="contact.html">Kontakt</a>
-    <a href="login.html">Login</a>
-</nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Über uns</a>
+            <a href="produkte.html">Menü</a>
+            <a href="contact.html">Kontakt</a>
+            <a href="login.html">Login</a>
+        </nav>
     </header>
 
-    <main style="padding: 60px 5%; text-align: center;">
-        <section style="max-width: 800px; margin: 0 auto;">
-            <h1>Echte Burger. Echte Leidenschaft. Keine Chemie!</h1>
-            <p>Willkommen bei Burger Empire, deinem Ziel für das beste Fast-Food Erlebnis in der Stadt. Wir kombinieren frische Zutaten aus der Region mit handwerklicher Perfektion.</p>
-            <p>Ob klassisch oder ausgefallen – bei uns findet jeder Burger-Liebhaber sein Glück. Unsere Saucen sind hausgemacht und unser Fleisch wird täglich frisch vorbereitet.</p>
-            <img src="assets/images/hero-burger.jpg" alt="Unser Signature Burger" style="width: 100%; border-radius: 24px; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-        </section>
+    <main class="hero-container">
+        <h1>Echte Burger. Echte Leidenschaft.</h1>
+        <p>Willkommen bei Burger Empire. Wir kombinieren frische Zutaten aus der Region mit handwerklicher Perfektion.</p>
+        <p>Entdecke den Geschmack von echtem Fleisch und hausgemachten Saucen.</p>
+        <a href="produkte.html" class="cta-button">Jetzt Menü ansehen</a>
     </main>
 
-    <footer style="text-align: center; padding: 40px; color: #888;">
+    <footer>
         <p>&copy; 2026 Burger Empire</p>
     </footer>
 </body>
