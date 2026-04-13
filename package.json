@@ -4,12 +4,15 @@
   "description": "Optimierung Task Runner",
   "main": "minify.js",
   "scripts": {
-    "build": "node minify.js",
+    "build": "sass style.scss style.css && node minify.js",
     "deploy": "npm run build && git add dist && git commit -m '🚀 Optimize & Deploy' && git push"
   },
   "devDependencies": {
     "fs-extra": "^11.1.0",
     "html-minifier": "^4.0.0",
     "rimraf": "^5.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.99.0"
   }
 }
