@@ -1,97 +1,126 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger Empire | Home</title>
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=1.2">
     <style>
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            overflow: hidden;
+            background-color: #1a1a1a;
+            color: white;
+            /* Scrollen wieder erlauben */
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
-        .video-background {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-            object-fit: cover;
-            filter: brightness(50%);
-        }
-
-        .hero-container {
+        .hero-text-section {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: white;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
             text-align: center;
-            padding: 0 20px;
+            padding: 80px 20px 40px 20px;
             box-sizing: border-box;
+            background-color: #1a1a1a;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+
+        h1 span {
+            color: #ff8200;
+        }
+
+        p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            max-width: 700px;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: rgba(255,255,255,0.9);
         }
 
         .cta-button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 28px;
-            background: #ff9f43;
-            color: white;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background: #ff8200;
+            color: #1a1a1a;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: transform 0.2s;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 20px rgba(255, 130, 0, 0.3);
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
+            background: #ff9d33;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 130, 0, 0.5);
         }
 
-        header {
+        .video-showcase {
+            width: 100%;
+            max-width: 900px; /* Video etwas kleiner gemacht */
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio Container */
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(255, 130, 0, 0.1);
+            border: 1px solid rgba(255, 130, 0, 0.3);
+        }
+
+        .video-background {
             position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
-            box-sizing: border-box;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            filter: contrast(1.1);
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
         }
 
         footer {
-            position: absolute;
-            bottom: 0;
             width: 100%;
             text-align: center;
-            padding: 10px;
-            color: rgba(255,255,255,0.5);
+            padding: 20px;
+            color: rgba(255,255,255,0.4);
             font-size: 0.8rem;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            max-width: 700px;
-            line-height: 1.5;
-            margin: 10px 0;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
-    <video autoplay loop muted playsinline poster="assets/images/hero-burger.jpg" class="video-background">
-        <source src="assets/videos/video.mp4" type="video/mp4">
-        <source src="assets/videos/video.webm" type="video/webm">
-    </video>
-
     <header>
-        <div class="logo">🍔 Burger Empire</div>
+        <div class="logo">Burger Empire</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">Über uns</a>
@@ -101,11 +130,22 @@
         </nav>
     </header>
 
-    <main class="hero-container">
-        <h1>Echte Burger. Echte Leidenschaft.</h1>
-        <p>Willkommen bei Burger Empire. Wir kombinieren frische Zutaten aus der Region mit handwerklicher Perfektion.</p>
-        <p>Entdecke den Geschmack von echtem Fleisch und hausgemachten Saucen.</p>
-        <a href="produkte.html" class="cta-button">Jetzt Menü ansehen</a>
+    <main>
+        <section class="hero-text-section">
+            <h1>Echte <span>Burger</span>.<br>Echte Leidenschaft.</h1>
+            <p>Willkommen bei Burger Empire. Wir kombinieren frische Zutaten aus der Region mit handwerklicher Perfektion.</p>
+            <p>Entdecke den Geschmack von echtem Fleisch und hausgemachten Saucen.</p>
+            <a href="produkte.html" class="cta-button">Jetzt Menü ansehen</a>
+        </section>
+
+        <section class="video-showcase">
+            <div class="video-wrapper">
+                <video autoplay loop muted playsinline poster="assets/images/hero-burger.jpg" class="video-background">
+                    <source src="assets/videos/video.mp4" type="video/mp4">
+                    <source src="assets/videos/video.webm" type="video/webm">
+                </video>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -113,3 +153,4 @@
     </footer>
 </body>
 </html>
+
