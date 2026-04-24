@@ -1,37 +1,32 @@
-Projektname: Burger Empire 🍔
+# Burger Empire
 
-    Ersteller: Dario
+Ersteller: Dario
 
-    Technologien: HTML5, CSS3 (Grid & Flexbox), Node.js (Task Runner).
+Technologien: HTML5, SCSS, generiertes CSS, Node.js Task Runner
 
-    Anleitung für den Lehrer:
+## Workflow
 
-        "Um den Task Runner zu testen:
+- `style.scss` ist die Quelle fuer das Styling.
+- `style.css` wird daraus generiert und von den HTML-Dateien geladen.
+- Der Ordner `docs/` wird beim Build automatisch neu erzeugt.
 
-            npm install (installiert die Abhängigkeiten aus der package.json)
+## Wichtige Befehle
 
-            npm run build (löscht den alten /docs Ordner und erstellt ihn neu mit minimiertem Code)"
+- `npm install` installiert die Abhaengigkeiten.
+- `npm run build` kompiliert `style.scss` zu `style.css` und erstellt den minimierten `docs/`-Build.
+- `npm run rebuild` setzt alles neu auf und fuehrt danach den Build aus.
 
-    Link zur Live-Seite: Füge den Link zu deiner GitHub Page ein, sobald sie fertig ist.
+## Projektstruktur
 
-2. Den Code-Check (Inhaltlich)
+- Hauptverzeichnis: bearbeitbare Quelldateien
+- `style.scss`: zentrale Style-Quelle
+- `style.css`: generiertes CSS fuer den Browser
+- `docs/`: minimierte Ausgabe fuer Deployment oder GitHub Pages
 
-Schau dir die Live-Seite im Browser an, sobald sie bereit ist, und klicke jeden Link einmal an:
+## Kurzer Check vor Abgabe
 
-    Funktioniert der Link zur contact.html (kontakt)
-
-    Laden alle Bilder (besonders im Menü)?
-
-    Sieht das Formular auf der Kontaktseite gut aus?
-
-3. Letzter Aufräum-Check im Repo
-
-Gehe auf deine GitHub-Startseite und prüfe die Dateiliste. Es sollte so aussehen:
-
-    [ ] Kein node_modules-Ordner hochladen von dir lokal!
-
-    [ ] Sowohl package.json als auch package-lock.json sind vorhanden.
-
-    [ ] Der Ordner docs enthält die "hässlichen" (minimierten) Dateien.
-
-    [ ] Die Dateien im Hauptverzeichnis sind deine "schönen" Quelldateien.
+- Alle Navigation-Links funktionieren.
+- Bilder und Videos laden korrekt.
+- Kontakt- und Login-Formulare sehen sauber aus.
+- `node_modules/` wird nicht ins Repo hochgeladen.
+- `package.json` und `package-lock.json` sind vorhanden.
