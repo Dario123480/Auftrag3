@@ -7,6 +7,15 @@ $card-bg: #242424;
 $transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $sticky-top: 82px;
 $sticky-top-mobile: 132px;
+$menu-card-min-width: 320px;
+$compact-card-min-width: 180px;
+$compact-card-max-width: 200px;
+$compact-card-gap: 20px;
+$compact-card-content-padding: 16px;
+$compact-card-title-size: 1.15rem;
+$compact-card-text-size: 0.92rem;
+$compact-card-price-size: 1.05rem;
+$compact-card-button-font-size: 0.82rem;
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -331,8 +340,53 @@ header {
 /* --- Menu Grid & Cards --- */
 .burger-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($menu-card-min-width, 1fr));
     gap: 28px;
+}
+
+/* Smaller fixed cards only for snacks and drinks */
+.burger-grid.compact-grid {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax($compact-card-min-width, $compact-card-max-width)
+    );
+    justify-content: center;
+    gap: $compact-card-gap;
+}
+
+.burger-grid.compact-grid .menu-card {
+    width: 100%;
+    max-width: $compact-card-max-width;
+}
+
+.burger-grid.compact-grid .menu-card .card-image-wrap {
+    aspect-ratio: 1 / 1;
+}
+
+.burger-grid.compact-grid .menu-card .card-content {
+    padding: $compact-card-content-padding;
+}
+
+.burger-grid.compact-grid .menu-card .card-content h3 {
+    font-size: $compact-card-title-size;
+}
+
+.burger-grid.compact-grid .menu-card .card-content p {
+    margin-bottom: 16px;
+    font-size: $compact-card-text-size;
+}
+
+.burger-grid.compact-grid .menu-card .card-content .card-footer {
+    padding-top: 12px;
+}
+
+.burger-grid.compact-grid .menu-card .card-content .card-footer .price {
+    font-size: $compact-card-price-size;
+}
+
+.burger-grid.compact-grid .menu-card .card-content .card-footer .btn-order {
+    padding: 7px 12px;
+    font-size: $compact-card-button-font-size;
 }
 
 .menu-card {
@@ -390,7 +444,6 @@ header {
     }
 
     .card-content {
-        padding: 30px;
         padding: 22px;
         display: flex;
         flex-direction: column;
@@ -526,7 +579,6 @@ header {
             }
 
             .avatar-wrap {
-                width: 100px;
                 width: 84px;
                 height: 84px;
                 border-radius: 50%;
@@ -820,5 +872,45 @@ footer {
     .booking-grid {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .burger-grid.compact-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .burger-grid.compact-grid .menu-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-image-wrap {
+        aspect-ratio: 16 / 9;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-content {
+        padding: 22px;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-content h3 {
+        font-size: 1.38rem;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-content p {
+        margin-bottom: 24px;
+        font-size: 1rem;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-content .card-footer {
+        padding-top: 14px;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-content .card-footer .price {
+        font-size: 1.18rem;
+    }
+
+    .burger-grid.compact-grid .menu-card .card-content .card-footer .btn-order {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }

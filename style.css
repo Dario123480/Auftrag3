@@ -297,6 +297,48 @@ header nav a.active::after, header nav a[aria-current=page]::after {
   gap: 28px;
 }
 
+/* Smaller fixed cards only for snacks and drinks */
+.burger-grid.compact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+  justify-content: center;
+  gap: 20px;
+}
+
+.burger-grid.compact-grid .menu-card {
+  width: 100%;
+  max-width: 200px;
+}
+
+.burger-grid.compact-grid .menu-card .card-image-wrap {
+  aspect-ratio: 1/1;
+}
+
+.burger-grid.compact-grid .menu-card .card-content {
+  padding: 16px;
+}
+
+.burger-grid.compact-grid .menu-card .card-content h3 {
+  font-size: 1.15rem;
+}
+
+.burger-grid.compact-grid .menu-card .card-content p {
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+}
+
+.burger-grid.compact-grid .menu-card .card-content .card-footer {
+  padding-top: 12px;
+}
+
+.burger-grid.compact-grid .menu-card .card-content .card-footer .price {
+  font-size: 1.05rem;
+}
+
+.burger-grid.compact-grid .menu-card .card-content .card-footer .btn-order {
+  padding: 7px 12px;
+  font-size: 0.82rem;
+}
+
 .menu-card {
   background: #242424;
   border-radius: 16px;
@@ -346,7 +388,6 @@ header nav a.active::after, header nav a[aria-current=page]::after {
   transform: scale(1.02);
 }
 .menu-card .card-content {
-  padding: 30px;
   padding: 22px;
   display: flex;
   flex-direction: column;
@@ -466,7 +507,6 @@ header nav a.active::after, header nav a[aria-current=page]::after {
   box-shadow: 0 10px 20px rgba(255, 130, 0, 0.15);
 }
 .team-section .team-grid .team-member .avatar-wrap {
-  width: 100px;
   width: 84px;
   height: 84px;
   border-radius: 50%;
@@ -729,6 +769,37 @@ footer p {
   .booking-grid {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  .burger-grid.compact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .burger-grid.compact-grid .menu-card {
+    width: 100%;
+    max-width: none;
+  }
+  .burger-grid.compact-grid .menu-card .card-image-wrap {
+    aspect-ratio: 16/9;
+  }
+  .burger-grid.compact-grid .menu-card .card-content {
+    padding: 22px;
+  }
+  .burger-grid.compact-grid .menu-card .card-content h3 {
+    font-size: 1.38rem;
+  }
+  .burger-grid.compact-grid .menu-card .card-content p {
+    margin-bottom: 24px;
+    font-size: 1rem;
+  }
+  .burger-grid.compact-grid .menu-card .card-content .card-footer {
+    padding-top: 14px;
+  }
+  .burger-grid.compact-grid .menu-card .card-content .card-footer .price {
+    font-size: 1.18rem;
+  }
+  .burger-grid.compact-grid .menu-card .card-content .card-footer .btn-order {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
 
