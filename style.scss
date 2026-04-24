@@ -50,7 +50,22 @@ header {
         text-transform: uppercase;
         text-shadow: 0 0 15px rgba($primary-orange, 0.6); /* Glow-Effekt für mehr Fokus */
         text-decoration: none;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 8px 22px rgba($primary-orange, 0.28);
+            border: 2px solid rgba($primary-orange, 0.45);
+        }
+
+        span {
+            display: inline-block;
+        }
     }
 
     nav {
@@ -834,6 +849,34 @@ footer {
     padding: 40px 20px;
     color: rgba(255,255,255,0.5);
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .footer-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: $primary-orange;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid rgba($primary-orange, 0.4);
+            box-shadow: 0 4px 14px rgba($primary-orange, 0.2);
+        }
+
+        span {
+            display: inline-block;
+        }
+    }
     
     p {
         margin: 0;
@@ -844,6 +887,16 @@ footer {
     header {
         flex-direction: column;
         padding: 15px;
+
+        .logo {
+            font-size: 1.55rem;
+
+            img {
+                width: 46px;
+                height: 46px;
+            }
+        }
+
         nav {
             margin-top: 20px;
             gap: 15px;
