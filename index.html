@@ -1,12 +1,31 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger Empire | Home</title>
+    <title>Burger Empire | Real Burgers, Real Passion</title>
+    <meta name="description" content="Willkommen bei Burger Empire – premium Zutaten, hausgemachte Saucen und die besten Burger der Stadt. Jetzt Menü entdecken und bestellen!">
     <link rel="stylesheet" href="style.css?v=1.4">
 </head>
 <body class="home-page">
+    <div id="toast-container"></div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>Warenkorb</h2>
+            <button class="close-cart">✕</button>
+        </div>
+        <div class="cart-items">
+            <!-- Items via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">CHF 0.00</span>
+            </div>
+            <button class="cta-button" style="width: 100%; border: none; cursor: pointer;">Checkout</button>
+        </div>
+    </div>
     <header>
         <a class="logo" href="index.html"><img src="assets/images/logo.jpg" alt="Burger Empire logo"><span>Burger Empire</span></a>
         <nav>
@@ -15,11 +34,12 @@
             <a href="produkte.html">Menu</a>
             <a href="contact.html">Contact</a>
             <a href="login.html">Login</a>
+            <a href="#" id="cart-trigger">🛒 <span id="cart-count">0</span></a>
         </nav>
     </header>
 
     <main class="home-main">
-        <section class="hero-text-section">
+        <section class="hero-text-section fade-in">
             <h1>Real <span>Burgers</span>.<br>Real Passion.</h1>
             <p>Welcome to Burger Empire where premium ingredients meet relaxed, feel-good vibes.</p>
             <p>Think bold flavor, house-made sauces, and burgers crafted with care.</p>
@@ -31,7 +51,7 @@
             <a href="contact.html">Book or Contact</a>
         </nav>
 
-        <section class="video-showcase">
+        <section class="video-showcase reveal">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline poster="assets/images/hero-burger.jpg" class="video-background">
                     <source src="assets/videos/video.mp4" type="video/mp4">
@@ -42,8 +62,9 @@
     </main>
 
     <footer>
-        <a class="footer-brand" href="index.html"><img src="assets/images/logo.jpg" alt="Burger Empire logo"><span>Burger Empire</span></a>
+        <a class="footer-brand" href="index.html"><img src="assets/images/logo.jpg" alt="Burger Empire logo" loading="lazy"><span>Burger Empire</span></a>
         <p>&copy; 2026 Burger Empire</p>
     </footer>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,12 +1,31 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Burger Empire</title>
+    <title>Über uns | Burger Empire</title>
+    <meta name="description" content="Erfahre mehr über die Geschichte von Burger Empire, unser Team und unsere Leidenschaft für das perfekte Burger-Erlebnis.">
     <link rel="stylesheet" href="style.css?v=1.4">
 </head>
 <body>
+    <div id="toast-container"></div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>Warenkorb</h2>
+            <button class="close-cart">✕</button>
+        </div>
+        <div class="cart-items">
+            <!-- Items via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">CHF 0.00</span>
+            </div>
+            <button class="cta-button" style="width: 100%; border: none; cursor: pointer;">Checkout</button>
+        </div>
+    </div>
     <header>
         <a class="logo" href="index.html"><img src="assets/images/logo.jpg" alt="Burger Empire logo"><span>Burger Empire</span></a>
         <nav>
@@ -15,16 +34,17 @@
             <a href="produkte.html">Menu</a>
             <a href="contact.html">Contact</a>
             <a href="login.html">Login</a>
+            <a href="#" id="cart-trigger">🛒 <span id="cart-count">0</span></a>
         </nav>
     </header>
 
     <main class="container">
-        <section class="about-section">
+        <section class="about-section reveal">
             <div class="about-hero">
                 <h2>The Story Behind Burger Empire</h2>
                 <p class="subtitle">From a simple craving to a bold burger brand</p>
                 <figure class="hero-figure">
-                    <img src="assets/images/hero-burger.jpg" alt="Our Signature Burger">
+                    <img src="assets/images/hero-burger.jpg" alt="Our Signature Burger" loading="lazy">
                     <figcaption>Where it all began: our first signature burger.</figcaption>
                 </figure>
                 <p class="about-text">
@@ -33,28 +53,28 @@
                 </p>
             </div>
 
-            <div class="team-section">
+            <div class="team-section reveal">
                 <h3>Our Team</h3>
                 <div class="team-grid">
                     <div class="team-member">
-                        <div class="avatar-wrap dario"><img src="assets/images/team-dario.jpg" alt="Dario"></div>
+                        <div class="avatar-wrap dario"><img src="assets/images/team-dario.jpg" alt="Dario" loading="lazy"></div>
                         <h4>Dario</h4>
                         <p>Founder & Visionary</p>
                     </div>
                     <div class="team-member">
-                        <div class="avatar-wrap"><img src="assets/images/team-david.jpg" alt="David"></div>
+                        <div class="avatar-wrap"><img src="assets/images/team-david.jpg" alt="David" loading="lazy"></div>
                         <h4>David</h4>
                         <p>Head Chef & Sauce Master</p>
                     </div>
                     <div class="team-member">
-                        <div class="avatar-wrap service"><img src="assets/images/team-service.jpg" alt="Team Service"></div>
+                        <div class="avatar-wrap service"><img src="assets/images/team-service.jpg" alt="Team Service" loading="lazy"></div>
                         <h4>Service Team</h4>
                         <p>The friendly faces that keep the vibe right</p>
                     </div>
                 </div>
             </div>
 
-            <div class="values-section">
+            <div class="values-section reveal">
                 <h3>Our Values</h3>
                 <div class="values-grid">
                     <div class="value-card">
@@ -78,8 +98,9 @@
     </main>
 
     <footer>
-        <a class="footer-brand" href="index.html"><img src="assets/images/logo.jpg" alt="Burger Empire logo"><span>Burger Empire</span></a>
+        <a class="footer-brand" href="index.html"><img src="assets/images/logo.jpg" alt="Burger Empire logo" loading="lazy"><span>Burger Empire</span></a>
         <p>&copy; 2026 Burger Empire</p>
     </footer>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
