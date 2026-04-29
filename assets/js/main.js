@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             const cartSummary = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
-            window.location.href = `contact.html?request=order&item=${encodeURIComponent(cartSummary)}`;
+            // Korrigierter Link mit .html und besserem Parameter-Handling
+            window.location.href = `contact.html?order=${encodeURIComponent(cartSummary)}`;
         });
     }
 
